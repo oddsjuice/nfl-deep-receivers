@@ -83,28 +83,6 @@
             min-width: 150px;
         }
 
-        .best-toggle {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            white-space: nowrap;
-        }
-
-        .best-toggle:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(30, 60, 114, 0.4);
-        }
-
-        .best-toggle.active {
-            background: linear-gradient(135deg, #2e7d32 0%, #43a047 100%);
-        }
-
         .table-container {
             background: white;
             border-radius: 12px;
@@ -267,7 +245,6 @@
                 <select id="teamFilter">
                     <option value="">All Teams</option>
                 </select>
-                <button id="bestToggle" class="best-toggle">⭐ Best</button>
             </div>
         </div>
 
@@ -300,14 +277,12 @@
     <script>
         let allData = [];
         let currentSort = { column: null, direction: 'asc' };
-        let bestFilterActive = false;
 
         const GITHUB_USERNAME = 'oddsjuice';
         const REPO_NAME = 'nfl-deep-receivers';
         const CSV_FILENAME = 'deep_nfl_receivers.csv';
         const CSV_URL = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPO_NAME}/main/${CSV_FILENAME}`;
 
-        // Load CSV from GitHub on page load
         window.addEventListener('DOMContentLoaded', function() {
             loadCSVFromGitHub();
         });
@@ -315,22 +290,14 @@
         async function loadCSVFromGitHub() {
             try {
                 const response = await fetch(CSV_URL);
-                if (!response.ok) {
-                    throw new Error(`Failed to load CSV: ${response.status}`);
-                }
+                if (!response.ok) throw new Error(`Failed to load CSV: ${response.status}`);
                 const csv = await response.text();
                 parseCSV(csv);
                 document.getElementById('lastUpdated').textContent = `Last updated: ${new Date().toLocaleString()}`;
             } catch (error) {
                 console.error('Error loading CSV:', error);
                 document.getElementById('tableBody').innerHTML = `
-                    <tr>
-                        <td colspan="9" class="error">
-                            Failed to load data. Make sure you've updated the GitHub username and repo name in the code,
-                            and that player_snap_summary.csv is uploaded to your repository.
-                        </td>
-                    </tr>
-                `;
+                    <tr><td colspan="9" class="error">Failed to load data.</td></tr>`;
                 document.getElementById('lastUpdated').textContent = 'Error loading data';
             }
         }
@@ -338,19 +305,14 @@
         function parseCSV(csv) {
             const lines = csv.split('\n');
             const headers = lines[0].split(',').map(h => h.trim());
-            
             allData = [];
             for (let i = 1; i < lines.length; i++) {
                 if (lines[i].trim() === '') continue;
-                
                 const values = lines[i].split(',').map(v => v.trim());
                 const row = {};
-                headers.forEach((header, index) => {
-                    row[header] = values[index] || '';
-                });
+                headers.forEach((header, index) => { row[header] = values[index] || ''; });
                 allData.push(row);
             }
-
             populateTeamFilter();
             renderTable();
         }
@@ -378,11 +340,9 @@
             if (!value || value === '') return '<span class="no-data">—</span>';
             const num = parseFloat(value);
             if (isNaN(num)) return '<span class="no-data">—</span>';
-            
             let className = 'edge-neutral';
             if (num > 0) className = 'edge-positive';
             else if (num < 0) className = 'edge-negative';
-            
             return `<span class="${className}">${num > 0 ? '+' : ''}${num}</span>`;
         }
 
@@ -404,91 +364,51 @@
                 return matchesSearch && matchesDepth && matchesTeam;
             });
 
-            // Apply sorting
+            // ✅ Corrected sorting logic
             if (currentSort.column) {
                 filteredData.sort((a, b) => {
                     let aVal = a[currentSort.column] || '';
                     let bVal = b[currentSort.column] || '';
 
-                    // Handle numeric columns with N/A logic for consensus_line and edge
-                    if (['median snap %', 'last snap %', 'consensus_line', 'prizepicks_line', 'edge'].includes(currentSort.column)) {
-                        // Special handling for consensus_line and edge columns
-                        if (currentSort.column === 'consensus_line' || currentSort.column === 'edge') {
-                            const aIsNA = shouldShowNA(a);
-                            const bIsNA = shouldShowNA(b);
-                            
-                            // Convert to numbers for comparison
-                            const aNum = parseFloat(aVal);
-                            const bNum = parseFloat(bVal);
-                            
-                            const aIsEmpty = (!aVal || aVal === '') && !aIsNA;
-                            const bIsEmpty = (!bVal || bVal === '') && !bIsNA;
-                            
-                            // Sort order for ascending: positive numbers, 0, N/A, negative numbers, empty
-                            // Sort order for descending: empty, negative numbers, N/A, 0, positive numbers
-                            
-                            if (currentSort.direction === 'asc') {
-                                // Handle empty values (put at end)
-                                if (aIsEmpty && bIsEmpty) return 0;
-                                if (aIsEmpty) return 1;
-                                if (bIsEmpty) return -1;
-                                
-                                // Both are N/A
-                                if (aIsNA && bIsNA) return 0;
-                                
-                                // One is N/A - N/A goes after non-negative, before negative
-                                if (aIsNA) {
-                                    if (bIsEmpty) return -1;
-                                    if (isNaN(bNum)) return 1;
-                                    return bNum < 0 ? -1 : 1; // N/A before negatives, after positives/0
-                                }
-                                if (bIsNA) {
-                                    if (aIsEmpty) return 1;
-                                    if (isNaN(aNum)) return -1;
-                                    return aNum < 0 ? 1 : -1; // N/A before negatives, after positives/0
-                                }
-                                
-                                // Neither is N/A, both have numeric values
-                                if (isNaN(aNum) && isNaN(bNum)) return 0;
-                                if (isNaN(aNum)) return 1;
-                                if (isNaN(bNum)) return -1;
-                                
-                                return aNum - bNum;
-                            } else {
-                                // Descending order
-                                if (aIsEmpty && bIsEmpty) return 0;
-                                if (aIsEmpty) return -1;
-                                if (bIsEmpty) return 1;
-                                
-                                // Both are N/A
-                                if (aIsNA && bIsNA) return 0;
-                                
-                                // One is N/A - N/A goes after negative, before non-negative
-                                if (aIsNA) {
-                                    if (bIsEmpty) return 1;
-                                    if (isNaN(bNum)) return -1;
-                                    return bNum >= 0 ? -1 : 1; // N/A after negatives, before positives/0
-                                }
-                                if (bIsNA) {
-                                    if (aIsEmpty) return -1;
-                                    if (isNaN(aNum)) return 1;
-                                    return aNum >= 0 ? 1 : -1; // N/A after negatives, before positives/0
-                                }
-                                
-                                // Neither is N/A, both have numeric values
-                                if (isNaN(aNum) && isNaN(bNum)) return 0;
-                                if (isNaN(aNum)) return -1;
-                                if (isNaN(bNum)) return 1;
-                                
-                                return bNum - aNum;
-                            }
-                        } else {
-                            // Standard numeric sorting for other columns
-                            aVal = parseFloat(aVal) || 0;
-                            bVal = parseFloat(bVal) || 0;
+                    if (['consensus_line', 'edge'].includes(currentSort.column)) {
+                        const aIsNA = shouldShowNA(a);
+                        const bIsNA = shouldShowNA(b);
+                        const aNum = parseFloat(aVal);
+                        const bNum = parseFloat(bVal);
+                        const aIsNum = !isNaN(aNum);
+                        const bIsNum = !isNaN(bNum);
+
+                        function rankAsc(val, isNA, isNum, num) {
+                            if (!isNum && !isNA) return 4;   // empty
+                            if (isNA) return 2;              // N/A between 0 and neg
+                            if (num > 0) return 0;           // pos
+                            if (num === 0) return 1;         // zero
+                            return 3;                        // neg
                         }
+
+                        function rankDesc(val, isNA, isNum, num) {
+                            if (!isNum && !isNA) return 4;   // empty
+                            if (isNA) return 1;              // N/A between neg and 0
+                            if (num < 0) return 0;           // neg first
+                            if (num === 0) return 2;         // zero next
+                            return 3;                        // pos after
+                        }
+
+                        const aRank = currentSort.direction === 'asc'
+                            ? rankAsc(aVal, aIsNA, aIsNum, aNum)
+                            : rankDesc(aVal, aIsNA, aIsNum, aNum);
+                        const bRank = currentSort.direction === 'asc'
+                            ? rankAsc(bVal, bIsNA, bIsNum, bNum)
+                            : rankDesc(bVal, bIsNA, bIsNum, bNum);
+
+                        if (aRank !== bRank) return aRank - bRank;
+                        if (aIsNum && bIsNum) {
+                            return currentSort.direction === 'asc' ? aNum - bNum : bNum - aNum;
+                        }
+                        return 0;
                     }
 
+                    // Default string/number sort
                     if (aVal < bVal) return currentSort.direction === 'asc' ? -1 : 1;
                     if (aVal > bVal) return currentSort.direction === 'asc' ? 1 : -1;
                     return 0;
@@ -505,7 +425,6 @@
                 const showNA = shouldShowNA(row);
                 const consensusDisplay = showNA ? 'N/A' : (row.consensus_line || '<span class="no-data">—</span>');
                 const edgeDisplay = showNA ? 'N/A' : formatEdge(row.edge);
-                
                 return `
                 <tr>
                     <td>${row.date || '<span class="no-data">—</span>'}</td>
@@ -517,34 +436,25 @@
                     <td>${consensusDisplay}</td>
                     <td>${row.prizepicks_line || '<span class="no-data">—</span>'}</td>
                     <td>${edgeDisplay}</td>
-                </tr>
-                `;
+                </tr>`;
             }).join('');
         }
 
-        // Search and filter event listeners
         document.getElementById('searchInput').addEventListener('input', renderTable);
         document.getElementById('depthFilter').addEventListener('change', renderTable);
         document.getElementById('teamFilter').addEventListener('change', renderTable);
 
-        // Sorting functionality
         document.querySelectorAll('th.sortable').forEach(th => {
             th.addEventListener('click', function() {
                 const column = this.dataset.column;
-                
                 if (currentSort.column === column) {
                     currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
                 } else {
                     currentSort.column = column;
                     currentSort.direction = 'asc';
                 }
-
-                // Update UI
-                document.querySelectorAll('th').forEach(header => {
-                    header.classList.remove('sort-asc', 'sort-desc');
-                });
+                document.querySelectorAll('th').forEach(header => header.classList.remove('sort-asc', 'sort-desc'));
                 this.classList.add(currentSort.direction === 'asc' ? 'sort-asc' : 'sort-desc');
-
                 renderTable();
             });
         });
