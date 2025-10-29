@@ -83,6 +83,28 @@
             min-width: 150px;
         }
 
+        .toggle-button {
+            padding: 12px 24px;
+            border: 2px solid #2a5298;
+            border-radius: 8px;
+            background: white;
+            color: #2a5298;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .toggle-button:hover {
+            background: #f0f7ff;
+        }
+
+        .toggle-button.active {
+            background: #2a5298;
+            color: white;
+        }
+
         .table-container {
             background: white;
             border-radius: 12px;
@@ -245,6 +267,7 @@
                 <select id="teamFilter">
                     <option value="">All Teams</option>
                 </select>
+                <button id="bestToggle" class="toggle-button">⭐ Best</button>
             </div>
         </div>
 
@@ -277,6 +300,7 @@
     <script>
         let allData = [];
         let currentSort = { column: null, direction: 'asc' };
+        let bestFilterActive = false;
 
         const GITHUB_USERNAME = 'oddsjuice';
         const REPO_NAME = 'nfl-deep-receivers';
@@ -361,7 +385,16 @@
                 const matchesSearch = row.player.toLowerCase().includes(searchTerm);
                 const matchesDepth = !depthFilter || row.depth === depthFilter;
                 const matchesTeam = !teamFilter || row.team === teamFilter;
-                return matchesSearch && matchesDepth && matchesTeam;
+                
+                // Best filter: edge > 0 and median snap >= 40%
+                let matchesBest = true;
+                if (bestFilterActive) {
+                    const edge = parseFloat(row.edge);
+                    const medianSnap = parseFloat(row['median snap %']);
+                    matchesBest = !isNaN(edge) && edge > 0 && !isNaN(medianSnap) && medianSnap >= 0.40;
+                }
+                
+                return matchesSearch && matchesDepth && matchesTeam && matchesBest;
             });
 
             if (currentSort.column) {
@@ -456,6 +489,12 @@
         document.getElementById('searchInput').addEventListener('input', renderTable);
         document.getElementById('depthFilter').addEventListener('change', renderTable);
         document.getElementById('teamFilter').addEventListener('change', renderTable);
+
+        document.getElementById('bestToggle').addEventListener('click', function() {
+            bestFilterActive = !bestFilterActive;
+            this.classList.toggle('active');
+            renderTable();
+        });
 
         document.querySelectorAll('th.sortable').forEach(th => {
             th.addEventListener('click', function() {
