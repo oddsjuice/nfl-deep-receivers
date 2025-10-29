@@ -163,6 +163,20 @@
             color: #7b1fa2;
         }
 
+        .edge-positive {
+            color: #2e7d32;
+            font-weight: 600;
+        }
+
+        .edge-negative {
+            color: #c62828;
+            font-weight: 600;
+        }
+
+        .edge-neutral {
+            color: #666;
+        }
+
         .no-data {
             color: #999;
             font-style: italic;
@@ -171,6 +185,18 @@
         .stat-highlight {
             font-weight: 600;
             color: #1e3c72;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .error {
+            text-align: center;
+            padding: 40px;
+            color: #c62828;
         }
 
         @media (max-width: 768px) {
@@ -191,35 +217,6 @@
             }
         }
 
-        .upload-section {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .upload-btn {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-            transition: transform 0.2s;
-        }
-
-        .upload-btn:hover {
-            transform: translateY(-2px);
-        }
-
-        #fileInput {
-            display: none;
-        }
-
         .last-updated {
             color: #666;
             font-size: 12px;
@@ -232,12 +229,7 @@
         <div class="header">
             <h1>🏈 NFL WR3/WR4 Receiving Yards Tracker</h1>
             <p class="subtitle">Real-time prop lines and snap count analysis</p>
-            <p class="last-updated" id="lastUpdated">Upload your CSV to get started</p>
-        </div>
-
-        <div class="upload-section">
-            <label for="fileInput" class="upload-btn">📂 Upload player_snap_summary.csv</label>
-            <input type="file" id="fileInput" accept=".csv">
+            <p class="last-updated" id="lastUpdated">Loading data...</p>
         </div>
 
         <div class="controls">
@@ -268,12 +260,13 @@
                         <th class="sortable" data-column="last_snap">Last Snap %</th>
                         <th class="sortable" data-column="consensus_line">Consensus Line</th>
                         <th class="sortable" data-column="prizepicks_line">PrizePicks Line</th>
+                        <th class="sortable" data-column="edge">Edge</th>
                     </tr>
                 </thead>
                 <tbody id="tableBody">
                     <tr>
-                        <td colspan="8" style="text-align: center; padding: 40px; color: #999;">
-                            Upload a CSV file to view data
+                        <td colspan="9" class="loading">
+                            Loading data from GitHub...
                         </td>
                     </tr>
                 </tbody>
@@ -285,19 +278,39 @@
         let allData = [];
         let currentSort = { column: null, direction: 'asc' };
 
-        // File upload handler
-        document.getElementById('fileInput').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    const csv = event.target.result;
-                    parseCSV(csv);
-                    document.getElementById('lastUpdated').textContent = `Last updated: ${new Date().toLocaleString()}`;
-                };
-                reader.readAsText(file);
-            }
+        // *** CHANGE THIS TO YOUR GITHUB USERNAME AND REPO NAME ***
+        const GITHUB_USERNAME = 'YOUR_GITHUB_USERNAME';
+        const REPO_NAME = 'nfl-wr-tracker';
+        const CSV_FILENAME = 'player_snap_summary.csv';
+        const CSV_URL = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPO_NAME}/main/${CSV_FILENAME}`;
+
+        // Load CSV from GitHub on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            loadCSVFromGitHub();
         });
+
+        async function loadCSVFromGitHub() {
+            try {
+                const response = await fetch(CSV_URL);
+                if (!response.ok) {
+                    throw new Error(`Failed to load CSV: ${response.status}`);
+                }
+                const csv = await response.text();
+                parseCSV(csv);
+                document.getElementById('lastUpdated').textContent = `Last updated: ${new Date().toLocaleString()}`;
+            } catch (error) {
+                console.error('Error loading CSV:', error);
+                document.getElementById('tableBody').innerHTML = `
+                    <tr>
+                        <td colspan="9" class="error">
+                            Failed to load data. Make sure you've updated the GitHub username and repo name in the code,
+                            and that player_snap_summary.csv is uploaded to your repository.
+                        </td>
+                    </tr>
+                `;
+                document.getElementById('lastUpdated').textContent = 'Error loading data';
+            }
+        }
 
         function parseCSV(csv) {
             const lines = csv.split('\n');
@@ -331,6 +344,25 @@
             });
         }
 
+        function formatSnapPercent(value) {
+            if (!value || value === '') return '<span class="no-data">—</span>';
+            const num = parseFloat(value);
+            if (isNaN(num)) return '<span class="no-data">—</span>';
+            return (num * 100).toFixed(1) + '%';
+        }
+
+        function formatEdge(value) {
+            if (!value || value === '') return '<span class="no-data">—</span>';
+            const num = parseFloat(value);
+            if (isNaN(num)) return '<span class="no-data">—</span>';
+            
+            let className = 'edge-neutral';
+            if (num > 0) className = 'edge-positive';
+            else if (num < 0) className = 'edge-negative';
+            
+            return `<span class="${className}">${num > 0 ? '+' : ''}${num}</span>`;
+        }
+
         function renderTable() {
             const searchTerm = document.getElementById('searchInput').value.toLowerCase();
             const depthFilter = document.getElementById('depthFilter').value;
@@ -350,7 +382,7 @@
                     let bVal = b[currentSort.column] || '';
 
                     // Handle numeric columns
-                    if (['median snap %', 'last snap %', 'consensus_line', 'prizepicks_line'].includes(currentSort.column)) {
+                    if (['median snap %', 'last snap %', 'consensus_line', 'prizepicks_line', 'edge'].includes(currentSort.column)) {
                         aVal = parseFloat(aVal) || 0;
                         bVal = parseFloat(bVal) || 0;
                     }
@@ -363,7 +395,7 @@
 
             const tbody = document.getElementById('tableBody');
             if (filteredData.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 40px; color: #999;">No data found</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="9" style="text-align: center; padding: 40px; color: #999;">No data found</td></tr>';
                 return;
             }
 
@@ -373,10 +405,11 @@
                     <td class="stat-highlight">${row.player}</td>
                     <td>${row.team || '<span class="no-data">—</span>'}</td>
                     <td><span class="depth-badge depth-${row.depth}">${row.depth}</span></td>
-                    <td>${row['median snap %'] ? row['median snap %'] + '%' : '<span class="no-data">—</span>'}</td>
-                    <td>${row['last snap %'] ? row['last snap %'] + '%' : '<span class="no-data">—</span>'}</td>
+                    <td>${formatSnapPercent(row['median snap %'])}</td>
+                    <td>${formatSnapPercent(row['last snap %'])}</td>
                     <td>${row.consensus_line || '<span class="no-data">—</span>'}</td>
                     <td>${row.prizepicks_line || '<span class="no-data">—</span>'}</td>
+                    <td>${formatEdge(row.edge)}</td>
                 </tr>
             `).join('');
         }
