@@ -362,6 +362,12 @@
             return `<span class="${className}">${num > 0 ? '+' : ''}${num}</span>`;
         }
 
+        function shouldShowNA(row) {
+            const hasConsensus = row.consensus_line && row.consensus_line.trim() !== '';
+            const hasPrizePicks = row.prizepicks_line && row.prizepicks_line.trim() !== '';
+            return !hasConsensus && hasPrizePicks;
+        }
+
         function renderTable() {
             const searchTerm = document.getElementById('searchInput').value.toLowerCase();
             const depthFilter = document.getElementById('depthFilter').value;
@@ -380,10 +386,70 @@
                     let aVal = a[currentSort.column] || '';
                     let bVal = b[currentSort.column] || '';
 
-                    // Handle numeric columns
+                    // Handle numeric columns with N/A logic for consensus_line and edge
                     if (['median snap %', 'last snap %', 'consensus_line', 'prizepicks_line', 'edge'].includes(currentSort.column)) {
-                        aVal = parseFloat(aVal) || 0;
-                        bVal = parseFloat(bVal) || 0;
+                        // Special handling for consensus_line and edge columns
+                        if (currentSort.column === 'consensus_line' || currentSort.column === 'edge') {
+                            const aIsNA = shouldShowNA(a);
+                            const bIsNA = shouldShowNA(b);
+                            
+                            // Convert to numbers for comparison
+                            const aNum = parseFloat(aVal);
+                            const bNum = parseFloat(bVal);
+                            
+                            const aIsEmpty = !aVal || aVal === '';
+                            const bIsEmpty = !bVal || bVal === '';
+                            
+                            // Sort order: positive numbers, 0, N/A, negative numbers, empty
+                            // For ascending: 1, 0, N/A, -1, empty
+                            // For descending: empty, -1, N/A, 0, 1
+                            
+                            if (currentSort.direction === 'asc') {
+                                if (aIsEmpty && bIsEmpty) return 0;
+                                if (aIsEmpty) return 1;
+                                if (bIsEmpty) return -1;
+                                
+                                if (aIsNA && bIsNA) return 0;
+                                if (aIsNA) {
+                                    if (isNaN(bNum)) return 1;
+                                    return bNum < 0 ? -1 : 1;
+                                }
+                                if (bIsNA) {
+                                    if (isNaN(aNum)) return -1;
+                                    return aNum < 0 ? 1 : -1;
+                                }
+                                
+                                if (isNaN(aNum) && isNaN(bNum)) return 0;
+                                if (isNaN(aNum)) return 1;
+                                if (isNaN(bNum)) return -1;
+                                
+                                return aNum - bNum;
+                            } else {
+                                if (aIsEmpty && bIsEmpty) return 0;
+                                if (aIsEmpty) return -1;
+                                if (bIsEmpty) return 1;
+                                
+                                if (aIsNA && bIsNA) return 0;
+                                if (aIsNA) {
+                                    if (isNaN(bNum)) return -1;
+                                    return bNum > 0 ? 1 : -1;
+                                }
+                                if (bIsNA) {
+                                    if (isNaN(aNum)) return 1;
+                                    return aNum > 0 ? -1 : 1;
+                                }
+                                
+                                if (isNaN(aNum) && isNaN(bNum)) return 0;
+                                if (isNaN(aNum)) return -1;
+                                if (isNaN(bNum)) return 1;
+                                
+                                return bNum - aNum;
+                            }
+                        } else {
+                            // Standard numeric sorting for other columns
+                            aVal = parseFloat(aVal) || 0;
+                            bVal = parseFloat(bVal) || 0;
+                        }
                     }
 
                     if (aVal < bVal) return currentSort.direction === 'asc' ? -1 : 1;
@@ -398,7 +464,12 @@
                 return;
             }
 
-            tbody.innerHTML = filteredData.map(row => `
+            tbody.innerHTML = filteredData.map(row => {
+                const showNA = shouldShowNA(row);
+                const consensusDisplay = showNA ? 'N/A' : (row.consensus_line || '<span class="no-data">—</span>');
+                const edgeDisplay = showNA ? 'N/A' : formatEdge(row.edge);
+                
+                return `
                 <tr>
                     <td>${row.date || '<span class="no-data">—</span>'}</td>
                     <td class="stat-highlight">${row.player}</td>
@@ -406,11 +477,12 @@
                     <td><span class="depth-badge depth-${row.depth}">${row.depth}</span></td>
                     <td>${formatSnapPercent(row['median snap %'])}</td>
                     <td>${formatSnapPercent(row['last snap %'])}</td>
-                    <td>${row.consensus_line || '<span class="no-data">—</span>'}</td>
+                    <td>${consensusDisplay}</td>
                     <td>${row.prizepicks_line || '<span class="no-data">—</span>'}</td>
-                    <td>${formatEdge(row.edge)}</td>
+                    <td>${edgeDisplay}</td>
                 </tr>
-            `).join('');
+                `;
+            }).join('');
         }
 
         // Search and filter event listeners
