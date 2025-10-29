@@ -301,9 +301,9 @@
         let currentSort = { column: null, direction: 'asc' };
 
         // *** CHANGE THIS TO YOUR GITHUB USERNAME AND REPO NAME ***
-        const GITHUB_USERNAME = 'YOUR_GITHUB_USERNAME';
-        const REPO_NAME = 'nfl-wr-tracker';
-        const CSV_FILENAME = 'player_snap_summary.csv';
+        const GITHUB_USERNAME = 'oddsjuice';
+        const REPO_NAME = 'nfl-deep-receivers';
+        const CSV_FILENAME = 'deep_nfl_receivers.csv';
         const CSV_URL = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPO_NAME}/main/${CSV_FILENAME}`;
 
         // Load CSV from GitHub on page load
@@ -326,7 +326,7 @@
                     <tr>
                         <td colspan="9" class="error">
                             Failed to load data. Make sure you've updated the GitHub username and repo name in the code,
-                            and that player_snap_summary.csv is uploaded to your repository.
+                            and that deep_nfl_receivers.csv is uploaded to your repository.
                         </td>
                     </tr>
                 `;
