@@ -397,48 +397,61 @@
                             const aNum = parseFloat(aVal);
                             const bNum = parseFloat(bVal);
                             
-                            const aIsEmpty = !aVal || aVal === '';
-                            const bIsEmpty = !bVal || bVal === '';
+                            const aIsEmpty = (!aVal || aVal === '') && !aIsNA;
+                            const bIsEmpty = (!bVal || bVal === '') && !bIsNA;
                             
-                            // Sort order: positive numbers, 0, N/A, negative numbers, empty
-                            // For ascending: 1, 0, N/A, -1, empty
-                            // For descending: empty, -1, N/A, 0, 1
+                            // Sort order for ascending: positive numbers, 0, N/A, negative numbers, empty
+                            // Sort order for descending: empty, negative numbers, N/A, 0, positive numbers
                             
                             if (currentSort.direction === 'asc') {
+                                // Handle empty values (put at end)
                                 if (aIsEmpty && bIsEmpty) return 0;
                                 if (aIsEmpty) return 1;
                                 if (bIsEmpty) return -1;
                                 
+                                // Both are N/A
                                 if (aIsNA && bIsNA) return 0;
+                                
+                                // One is N/A - N/A goes after non-negative, before negative
                                 if (aIsNA) {
+                                    if (bIsEmpty) return -1;
                                     if (isNaN(bNum)) return 1;
-                                    return bNum < 0 ? -1 : 1;
+                                    return bNum < 0 ? -1 : 1; // N/A before negatives, after positives/0
                                 }
                                 if (bIsNA) {
+                                    if (aIsEmpty) return 1;
                                     if (isNaN(aNum)) return -1;
-                                    return aNum < 0 ? 1 : -1;
+                                    return aNum < 0 ? 1 : -1; // N/A before negatives, after positives/0
                                 }
                                 
+                                // Neither is N/A, both have numeric values
                                 if (isNaN(aNum) && isNaN(bNum)) return 0;
                                 if (isNaN(aNum)) return 1;
                                 if (isNaN(bNum)) return -1;
                                 
                                 return aNum - bNum;
                             } else {
+                                // Descending order
                                 if (aIsEmpty && bIsEmpty) return 0;
                                 if (aIsEmpty) return -1;
                                 if (bIsEmpty) return 1;
                                 
+                                // Both are N/A
                                 if (aIsNA && bIsNA) return 0;
+                                
+                                // One is N/A - N/A goes after negative, before non-negative
                                 if (aIsNA) {
+                                    if (bIsEmpty) return 1;
                                     if (isNaN(bNum)) return -1;
-                                    return bNum > 0 ? 1 : -1;
+                                    return bNum >= 0 ? -1 : 1; // N/A after negatives, before positives/0
                                 }
                                 if (bIsNA) {
+                                    if (aIsEmpty) return -1;
                                     if (isNaN(aNum)) return 1;
-                                    return aNum > 0 ? -1 : 1;
+                                    return aNum >= 0 ? 1 : -1; // N/A after negatives, before positives/0
                                 }
                                 
+                                // Neither is N/A, both have numeric values
                                 if (isNaN(aNum) && isNaN(bNum)) return 0;
                                 if (isNaN(aNum)) return -1;
                                 if (isNaN(bNum)) return 1;
