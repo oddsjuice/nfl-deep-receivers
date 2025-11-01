@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NFL WR3/WR4 Analysis</title>
-    <style>
+<style>
         * {
             margin: 0;
             padding: 0;
@@ -109,7 +109,10 @@
             background: white;
             border-radius: 12px;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
+            
+            /* --- THIS IS THE MAIN FIX --- */
+            /* Allows the table to scroll horizontally on small screens */
+            overflow-x: auto; 
         }
 
         table {
@@ -222,6 +225,16 @@
         }
 
         @media (max-width: 768px) {
+            /* --- NEW: Reduce padding on mobile --- */
+            body {
+                padding: 10px;
+            }
+
+            /* --- NEW: Reduce header padding on mobile --- */
+            .header {
+                padding: 20px;
+            }
+            
             .controls {
                 flex-direction: column;
             }
