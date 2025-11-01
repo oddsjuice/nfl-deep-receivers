@@ -306,10 +306,38 @@
         const REPO_NAME = 'nfl-deep-receivers';
         const CSV_FILENAME = 'deep_nfl_receivers.csv';
         const CSV_URL = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPO_NAME}/main/${CSV_FILENAME}`;
+        
+        // --- NEW: API URL for fetching commit history ---
+        const COMMIT_API_URL = `https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/commits?path=${CSV_FILENAME}&page=1&per_page=1`;
 
         window.addEventListener('DOMContentLoaded', function() {
             loadCSVFromGitHub();
+            loadLastUpdatedTime(); // <-- NEW: Call the function to get the actual update time
         });
+
+        // --- NEW: Function to fetch the last commit date ---
+        async function loadLastUpdatedTime() {
+            try {
+                const response = await fetch(COMMIT_API_URL);
+                if (!response.ok) throw new Error(`GitHub API error: ${response.status}`);
+                const data = await response.json();
+                
+                if (data && data.length > 0) {
+                    const lastCommitDate = data[0].commit.committer.date;
+                    const formattedDate = new Date(lastCommitDate).toLocaleString();
+                    document.getElementById('lastUpdated').textContent = `Last updated: ${formattedDate}`;
+                } else {
+                    throw new Error('No commit history found for the file.');
+                }
+            } catch (error) {
+                console.error('Error fetching last updated time:', error);
+                // Don't overwrite a more important error (like "Error loading data")
+                const el = document.getElementById('lastUpdated');
+                if (el.textContent === 'Loading data...') {
+                     el.textContent = 'Last updated: N/A';
+                }
+            }
+        }
 
         async function loadCSVFromGitHub() {
             try {
@@ -317,7 +345,9 @@
                 if (!response.ok) throw new Error(`Failed to load CSV: ${response.status}`);
                 const csv = await response.text();
                 parseCSV(csv);
-                document.getElementById('lastUpdated').textContent = `Last updated: ${new Date().toLocaleString()}`;
+                // --- REMOVED ---
+                // We no longer set the time here, as loadLastUpdatedTime() handles it
+                // document.getElementById('lastUpdated').textContent = `Last updated: ${new Date().toLocaleString()}`; 
             } catch (error) {
                 console.error('Error loading CSV:', error);
                 document.getElementById('tableBody').innerHTML = `
@@ -417,7 +447,6 @@
                         return currentSort.direction === 'asc' ? aNum - bNum : bNum - aNum;
                     }
 
-                    // *** START OF FIX ***
                     // Handle numerical columns: consensus_line, prizepicks_line, edge
                     if (['consensus_line', 'prizepicks_line', 'edge'].includes(currentSort.column)) {
                         const aIsNA = (currentSort.column === 'consensus_line' || currentSort.column === 'edge') && shouldShowNA(a);
@@ -448,7 +477,6 @@
                         // If both are N/A or both are blank, consider them equal
                         return 0;
                     }
-                    // *** END OF FIX ***
 
                     // Default string sort for other columns
                     if (aVal < bVal) return currentSort.direction === 'asc' ? -1 : 1;
