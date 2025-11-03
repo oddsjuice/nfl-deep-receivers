@@ -1,6 +1,6 @@
 date,player,team,depth,median snap %,last snap %,consensus_line,prizepicks_line,edge
-2025-11-03 08:15PM EST,Zay Jones,ARI,WR3,0.505,0.54,20.5,20.5,0.0
-2025-11-03 08:15PM EST,Greg Dortch,ARI,WR4,0.18,0.09,5.5,7.5,-2.0
+2025-11-03 08:15PM EST,Zay Jones,ARI,WR3,0.505,0.54,20.5,18.5,2.0
+2025-11-03 08:15PM EST,Greg Dortch,ARI,WR4,0.18,0.09,6.5,7.5,-1.0
 ,David Sills,,WR3,0.38,0.9,9.5,,
 ,KhaDarel Hodge,,WR4,0.08499999999999999,0.66,,,
 ,DeAndre Hopkins,,WR3,0.325,0.32,16.5,,
@@ -27,10 +27,10 @@ date,player,team,depth,median snap %,last snap %,consensus_line,prizepicks_line,
 ,Xavier Hutchinson,,WR4,0.68,0.71,18.5,,
 ,Josh Downs,,WR3,0.51,0.64,36.5,,
 ,Ashton Dulin,,WR4,0.16,0.25,,,
-2025-11-02 04:04PM EST,Dyami Brown,JAC,WR3,0.65,0.3,38.5,30.5,8.0
+,Dyami Brown,,WR3,0.65,0.3,38.5,,
 ,Tim Patrick,,WR4,0.18,0.19,,,
-2025-11-02 04:20PM EST,Hollywood Brown,KC,WR3,0.52,0.38,17.5,43.5,-26.0
-2025-11-02 04:20PM EST,JuJu Smith-Schuster,KC,WR4,0.675,0.3,11.5,0.5,11.0
+2025-11-02 04:20PM EST,Hollywood Brown,KC,WR3,0.52,0.38,17.5,73.5,-56.0
+,JuJu Smith-Schuster,,WR4,0.675,0.3,11.5,,
 ,Jordan Whittington,,WR3,0.6,0.6,20.5,,
 ,Xavier Smith,,WR4,0.03,0.47,,,
 ,Quentin Johnston,,WR3,0.82,0.52,35.5,,
@@ -61,5 +61,5 @@ date,player,team,depth,median snap %,last snap %,consensus_line,prizepicks_line,
 ,Sterling Shepard,,WR4,0.615,0.41,,,
 ,Chimere Dike,,WR3,0.45499999999999996,0.89,34.5,,
 ,Van Jefferson,,WR4,0.36,0.79,26.5,,
-2025-11-02 08:20PM EST,Luke McCaffrey,WAS,WR3,0.375,0.51,24.5,24.5,0.0
+2025-11-02 08:20PM EST,Luke McCaffrey,WAS,WR3,0.375,0.51,23.5,23.5,0.0
 2025-11-02 08:20PM EST,Chris Moore,WAS,WR4,0.59,0.43,21.5,21.5,0.0
