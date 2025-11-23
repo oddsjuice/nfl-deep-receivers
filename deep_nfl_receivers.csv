@@ -2,12 +2,12 @@ date,player,team,depth,median snap %,last snap %,consensus_line,prizepicks_line,
 2025-11-23 04:05PM EST,Greg Dortch,ARI,WR3,0.22499999999999998,0.66,28.5,29.5,-1.0
 2025-11-23 04:05PM EST,Xavier Weaver,ARI,WR4,0.07,0.72,13.5,13.5,0.0
 2025-11-23 04:25PM EST,David Sills,ATL,WR3,0.445,0.56,18.0,17.5,0.5
-2025-11-23 04:25PM EST,KhaDarel Hodge,ATL,WR4,0.06,0.09,18.5,17.5,1.0
+2025-11-23 04:25PM EST,KhaDarel Hodge,ATL,WR4,0.06,0.09,19.5,17.5,2.0
 2025-11-23 01:00PM EST,DeAndre Hopkins,BAL,WR3,0.325,0.69,21.5,21.5,0.0
 2025-11-23 01:00PM EST,Tylan Wallace,BAL,WR4,0.235,0.43,0.5,0.5,0.0
 ,Tyrell Shavers,,WR3,0.35,0.39,23.5,,
 ,Gabe Davis,,WR4,,,24.5,,
-2025-11-24 08:15PM EST,Jalen Coker,CAR,WR3,0.66,0.68,28.5,28.5,0.0
+2025-11-24 08:15PM EST,Jalen Coker,CAR,WR3,0.66,0.68,29.5,28.5,1.0
 ,Jimmy Horn,,WR4,0.21,0.09,,,
 2025-11-23 01:00PM EST,Luther Burden,CHI,WR3,0.28,0.44,33.5,34.5,-1.0
 2025-11-23 01:00PM EST,Olamide Zaccheaus,CHI,WR4,0.575,0.13,7.5,7.5,0.0
@@ -20,14 +20,14 @@ date,player,team,depth,median snap %,last snap %,consensus_line,prizepicks_line,
 ,Pat Bryant,,WR3,0.51,0.56,,,
 ,Marvin Mims,,WR4,0.36,0.24,,,
 2025-11-23 01:00PM EST,Kalif Raymond,DET,WR3,0.515,0.64,11.5,10.5,1.0
-2025-11-23 01:00PM EST,Isaac TeSlaa,DET,WR4,0.25,0.34,10.5,10.5,0.0
+2025-11-23 01:00PM EST,Isaac TeSlaa,DET,WR4,0.25,0.34,8.5,8.5,0.0
 2025-11-23 01:00PM EST,Matthew Golden,GB,WR3,0.59,0.35,20.5,21.5,-1.0
 2025-11-23 01:00PM EST,Dontayvion Wicks,GB,WR4,0.55,0.56,19.5,21.5,-2.0
 ,Christian Kirk,,WR3,0.51,0.32,12.5,,
 ,Jaylin Noel,,WR4,0.29,0.29,8.5,,
 2025-11-23 01:00PM EST,Josh Downs,IND,WR3,0.51,0.47,33.5,33.5,0.0
 ,Ashton Dulin,,WR4,0.16,0.19,,,
-2025-11-23 04:05PM EST,Parker Washington,JAC,WR3,0.735,0.76,44.5,44.5,0.0
+2025-11-23 04:05PM EST,Parker Washington,JAC,WR3,0.735,0.76,43.5,43.5,0.0
 2025-11-23 04:05PM EST,Tim Patrick,JAC,WR4,0.19,0.58,19.5,20.5,-1.0
 ,Hollywood Brown,,WR3,0.52,0.43,21.5,,
 2025-11-23 01:00PM EST,JuJu Smith-Schuster,KC,WR4,0.64,0.34,8.5,8.5,0.0
@@ -41,7 +41,7 @@ date,player,team,depth,median snap %,last snap %,consensus_line,prizepicks_line,
 ,Dee Eskridge,,WR4,0.07,0.12,,,
 2025-11-23 01:00PM EST,Jalen Nailor,MIN,WR3,0.665,0.6,19.5,21.5,-2.0
 ,Adam Thielen,,WR4,0.19,0.15,,,
-2025-11-23 01:00PM EST,Mack Hollins,NE,WR3,0.63,0.85,23.5,25.5,-2.0
+2025-11-23 01:00PM EST,Mack Hollins,NE,WR3,0.63,0.85,24.5,25.5,-1.0
 2025-11-23 01:00PM EST,DeMario Douglas,NE,WR4,0.25,0.28,20.5,21.5,-1.0
 ,Mason Tipton,,WR3,0.07,0.34,,,
 ,Kevin Austin Jr.,,WR4,,,,,
@@ -57,9 +57,9 @@ date,player,team,depth,median snap %,last snap %,consensus_line,prizepicks_line,
 ,Tory Horton,,WR4,0.47,0.73,,,
 ,Demarcus Robinson,,WR3,0.42000000000000004,0.49,,,
 ,Kendrick Bourne,,WR4,0.725,0.24,,,
-2025-11-23 08:20PM EST,Tez Johnson,TB,WR3,0.68,0.83,33.5,33.5,0.0
+2025-11-23 08:20PM EST,Tez Johnson,TB,WR3,0.68,0.83,33.5,32.5,1.0
 2025-11-23 08:20PM EST,Sterling Shepard,TB,WR4,0.63,0.66,17.5,18.5,-1.0
-2025-11-23 01:00PM EST,Van Jefferson,TEN,WR3,0.56,0.92,29.5,30.5,-1.0
+2025-11-23 01:00PM EST,Van Jefferson,TEN,WR3,0.56,0.92,30.5,30.5,0.0
 2025-11-23 01:00PM EST,Mason Kinsey,TEN,WR4,0.08,0.56,14.5,14.5,0.0
 ,Treylon Burks,,WR3,0.45,0.39,,,
 ,Jaylin Lane,,WR4,0.42,0.15,,,
