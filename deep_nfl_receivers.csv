@@ -1,65 +1,65 @@
 date,player,team,depth,median snap %,last snap %,consensus_line,prizepicks_line,edge
-2025-11-30 01:00PM EST,Greg Dortch,ARI,WR3,0.24,0.63,18.5,16.5,2.0
-,Xavier Weaver,,WR4,0.14,0.68,,,
-2025-11-30 01:00PM EST,David Sills,ATL,WR3,0.45,0.7,20.5,19.5,1.0
-,KhaDarel Hodge,,WR4,0.075,0.09,,,
-,DeAndre Hopkins,,WR3,0.33,0.38,15.5,,
+,Greg Dortch,,WR3,0.28500000000000003,0.33,,,
+,Xavier Weaver,,WR4,0.21,0.49,,,
+,David Sills,,WR3,0.47,0.84,,,
+,Dylan Drummond,,WR4,0.195,0.3,,,
+2025-12-07 01:00PM EST,DeAndre Hopkins,BAL,WR3,0.33,0.38,15.5,15.5,0.0
 ,Devontez Walker,,WR4,0.135,0.28,,,
-,Brandin Cooks,,WR3,0.66,0.5,,,
-2025-11-30 04:25PM EST,Gabe Davis,BUF,WR4,,,20.5,20.5,0.0
-2025-11-30 01:00PM EST,Jalen Coker,CAR,WR3,0.67,0.83,28.5,28.5,0.0
-2025-11-30 01:00PM EST,Jimmy Horn,CAR,WR4,0.21,0.22,2.5,3.5,-1.0
-,Luther Burden,,WR3,0.28,0.51,31.5,,
-,Olamide Zaccheaus,,WR4,0.5449999999999999,0.28,5.5,,
-,Andrei Iosivas,,WR3,0.835,0.94,35.5,,
+2025-12-07 01:00PM EST,Gabe Davis,BUF,WR3,,,21.5,21.5,0.0
+2025-12-07 01:00PM EST,Keon Coleman,BUF,WR4,0.7050000000000001,0.45,25.5,25.5,0.0
+,Jalen Coker,,WR3,0.66,0.55,,,
+,Brycen Tremayne,,WR4,0.265,0.27,,,
+2025-12-07 04:25PM EST,Luther Burden,CHI,WR3,0.28,0.51,29.0,29.5,-0.5
+,Olamide Zaccheaus,,WR4,0.5449999999999999,0.28,,,
+,Andrei Iosivas,,WR3,0.835,0.94,,,
 ,Mitchell Tinsley,,WR4,0.15,0.67,,,
-,Isaiah Bond,,WR3,0.49,0.29,,,
-,Malachi Corley,,WR4,0.23,0.25,,,
-,Ryan Flournoy,,WR3,0.405,0.38,8.5,,
-,KaVontae Turpin,,WR4,0.385,0.36,15.5,,
-2025-11-30 08:20PM EST,Pat Bryant,DEN,WR3,0.51,0.56,22.0,21.5,0.5
-2025-11-30 08:20PM EST,Marvin Mims,DEN,WR4,0.36,0.24,13.5,13.5,0.0
+2025-12-07 01:00PM EST,Isaiah Bond,CLE,WR3,0.44,0.29,7.5,7.5,0.0
+,Malachi Corley,,WR4,0.24,0.37,,,
+2025-12-04 08:15PM EST,Ryan Flournoy,DAL,WR3,0.405,0.38,12.5,11.5,1.0
+2025-12-04 08:15PM EST,KaVontae Turpin,DAL,WR4,0.385,0.36,14.5,16.5,-2.0
+2025-12-07 04:05PM EST,Pat Bryant,DEN,WR3,0.525,0.7,25.5,25.5,0.0
+,Marvin Mims,,WR4,0.36,0.33,,,
 ,Kalif Raymond,,WR3,0.49,0.4,,,
-,Isaac TeSlaa,,WR4,0.29,0.92,15.5,,
+2025-12-04 08:15PM EST,Isaac TeSlaa,DET,WR4,0.29,0.92,39.5,38.5,1.0
 ,Matthew Golden,,WR3,0.59,0.35,,,
-,Dontayvion Wicks,,WR4,0.515,0.49,27.5,,
-2025-11-30 01:00PM EST,Christian Kirk,HOU,WR3,0.51,0.32,18.5,17.5,1.0
-,Jaylin Noel,,WR4,0.29,0.29,,,
-2025-11-30 01:00PM EST,Josh Downs,IND,WR3,0.51,0.43,32.0,33.5,-1.5
-,Anthony Gould,,WR4,0.03,0.0,,,
-2025-11-30 01:00PM EST,Parker Washington,JAC,WR3,0.76,0.84,35.5,37.5,-2.0
-,Tim Patrick,,WR4,0.24,0.47,,,
+,Dontayvion Wicks,,WR4,0.515,0.49,,,
+2025-12-07 08:20PM EST,Xavier Hutchinson,HOU,WR3,0.625,0.55,17.5,16.5,1.0
+2025-12-07 08:20PM EST,Christian Kirk,HOU,WR4,0.5,0.49,15.0,16.5,-1.5
+,Josh Downs,,WR3,0.51,0.57,,,
+,Laquon Treadwell,,WR4,0.0,0.13,,,
+,Parker Washington,,WR3,0.735,0.38,,,
+,Tim Patrick,,WR4,0.19,0.11,,,
 ,Hollywood Brown,,WR3,0.48,0.44,17.5,,
-,JuJu Smith-Schuster,,WR4,0.5449999999999999,0.33,12.5,,
-2025-11-30 01:00PM EST,Jordan Whittington,LA,WR3,0.5,0.61,,7.5,
-,Xavier Smith,,WR4,0.1,0.12,,,
-2025-11-30 04:25PM EST,Keenan Allen,LAC,WR3,0.58,0.75,37.5,40.5,-3.0
-,Tre Harris,,WR4,0.43,0.52,12.5,,
+2025-12-07 08:20PM EST,JuJu Smith-Schuster,KC,WR4,0.5449999999999999,0.33,8.5,6.5,2.0
+,Xavier Smith,,WR3,0.12,0.38,,,
+,Jordan Whittington,,WR4,0.5,0.35,,,
+2025-12-08 08:15PM EST,Keenan Allen,LAC,WR3,0.59,0.6,39.5,38.5,1.0
+,Tre Harris,,WR4,0.435,0.51,11.5,,
 ,Dont'e Thornton Jr.,,WR3,,,,,
-,Jack Bech,,WR4,0.15,0.11,,,
-,Nick Westbrook-Ikhine,,WR3,0.47,0.27,8.5,,
-,Dee Eskridge,,WR4,0.07,0.12,,,
-2025-11-30 04:05PM EST,Jalen Nailor,MIN,WR3,0.65,0.45,15.5,15.5,0.0
-,Adam Thielen,,WR4,0.16,0.07,,,
-2025-12-01 08:15PM EST,Mack Hollins,NE,WR3,0.64,0.86,34.5,34.5,0.0
-2025-12-01 08:15PM EST,DeMario Douglas,NE,WR4,0.245,0.17,15.5,14.5,1.0
-2025-11-30 01:00PM EST,Mason Tipton,NO,WR3,0.09,0.7,19.5,19.5,0.0
-,Kevin Austin Jr.,,WR4,,,,,
-2025-12-01 08:15PM EST,Isaiah Hodgins,NYG,WR3,0.7250000000000001,0.66,21.5,23.5,-2.0
-,Gunner Olszewski,,WR4,0.005,0.1,,,
-2025-11-30 01:00PM EST,Allen Lazard,NYJ,WR3,0.43,0.41,6.5,5.5,1.0
-,Isaiah Williams,,WR4,0.02,0.27,,,
-,Jahan Dotson,,WR3,0.54,0.59,6.5,,
+2025-12-07 04:05PM EST,Jack Bech,LV,WR4,0.19,0.56,22.5,22.5,0.0
+,Nick Westbrook-Ikhine,,WR3,0.47,0.22,,,
+,Cedrick Wilson Jr.,,WR4,0.28,0.17,,,
+2025-12-07 01:00PM EST,Jalen Nailor,MIN,WR3,0.665,0.69,14.5,14.5,0.0
+,Myles Price,,WR4,0.0,0.02,,,
+,Mack Hollins,,WR3,0.65,0.75,,,
+,DeMario Douglas,,WR4,0.25,0.34,,,
+,Mason Tipton,,WR3,0.11,0.85,,,
+,Dante Pettis,,WR4,0.04,0.04,,,
+,Isaiah Hodgins,,WR3,0.79,0.89,,,
+,Gunner Olszewski,,WR4,0.01,0.02,,,
+,Allen Lazard,,WR3,0.42,0.29,,,
+,Isaiah Williams,,WR4,0.14500000000000002,0.39,,,
+2025-12-08 08:15PM EST,Jahan Dotson,PHI,WR3,0.54,0.59,7.5,7.5,0.0
 ,Darius Cooper,,WR4,0.185,0.24,,,
-2025-11-30 04:25PM EST,Roman Wilson,PIT,WR3,0.35,0.28,11.5,11.5,0.0
-,Ben Skowronek,,WR4,0.17,0.36,,,
-2025-11-30 04:05PM EST,Rashid Shaheed,SEA,WR3,0.7,0.56,23.5,21.5,2.0
-,Cody White,,WR4,0.26,0.23,,,
-2025-11-30 01:00PM EST,Demarcus Robinson,SF,WR3,0.46,0.54,8.5,8.5,0.0
-,Kendrick Bourne,,WR4,0.72,0.09,,,
-2025-11-30 01:00PM EST,Tez Johnson,TB,WR3,0.6950000000000001,0.86,25.5,29.5,-4.0
-2025-11-30 01:00PM EST,Sterling Shepard,TB,WR4,0.62,0.59,17.5,15.5,2.0
-2025-11-30 01:00PM EST,Van Jefferson,TEN,WR3,0.74,0.91,23.5,23.5,0.0
+,Roman Wilson,,WR3,0.35,0.44,10.5,,
+,Adam Thielen,,WR4,0.16,0.07,,,
+2025-12-07 01:00PM EST,Rashid Shaheed,SEA,WR3,0.7,0.48,19.5,18.5,1.0
+,Cody White,,WR4,0.245,0.21,,,
+,Demarcus Robinson,,WR3,0.445,0.43,,,
+,Kendrick Bourne,,WR4,0.7,0.34,,,
+2025-12-07 01:00PM EST,Tez Johnson,TB,WR3,0.68,0.57,21.5,21.5,0.0
+2025-12-07 01:00PM EST,Sterling Shepard,TB,WR4,0.615,0.26,10.5,10.5,0.0
+2025-12-07 01:00PM EST,Van Jefferson,TEN,WR3,0.745,0.75,20.5,20.5,0.0
 ,James Proche II,,WR4,,,,,
-2025-11-30 08:20PM EST,Treylon Burks,WAS,WR3,0.45,0.39,12.5,12.5,0.0
-,Jaylin Lane,,WR4,0.42,0.15,,,
+,Treylon Burks,,WR3,0.51,0.66,,,
+,Jaylin Lane,,WR4,0.405,0.39,,,
