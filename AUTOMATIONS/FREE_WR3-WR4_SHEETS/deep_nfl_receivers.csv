@@ -5,31 +5,31 @@ date,player,team,depth,median snap %,last snap %,consensus_line,prizepicks_line,
 ,Dylan Drummond,,WR4,0.28500000000000003,0.39,,,
 2025-12-21 08:20PM EST,DeAndre Hopkins,BAL,WR3,0.325,0.32,11.5,11.5,0.0
 ,Devontez Walker,,WR4,0.15,0.61,,,
-2025-12-21 01:00PM EST,Keon Coleman,BUF,WR3,0.65,0.56,17.5,17.5,0.0
+2025-12-21 01:00PM EST,Keon Coleman,BUF,WR3,0.65,0.56,17.5,16.5,1.0
 ,Tyrell Shavers,,WR4,0.395,0.5,,,
 2025-12-21 01:00PM EST,Jalen Coker,CAR,WR3,0.67,0.68,38.5,39.5,-1.0
 ,Brycen Tremayne,,WR4,0.26,0.14,,,
 ,Luther Burden,,WR3,0.29,0.39,,,
-2025-12-20 08:20PM EST,Olamide Zaccheaus,CHI,WR4,0.575,0.82,27.5,27.5,0.0
+,Olamide Zaccheaus,,WR4,0.575,0.82,28.5,,
 ,Andrei Iosivas,,WR3,0.835,0.89,,,
 ,Mitchell Tinsley,,WR4,0.15,0.45,,,
-2025-12-21 01:00PM EST,Isaiah Bond,CLE,WR3,0.48,0.68,15.5,15.5,0.0
+2025-12-21 01:00PM EST,Isaiah Bond,CLE,WR3,0.48,0.68,14.5,15.5,-1.0
 2025-12-21 01:00PM EST,Gage Larvadain,CLE,WR4,0.27,0.54,6.5,6.5,0.0
 2025-12-21 01:00PM EST,Ryan Flournoy,DAL,WR3,0.44,0.64,27.5,27.5,0.0
 2025-12-21 01:00PM EST,KaVontae Turpin,DAL,WR4,0.385,0.2,9.5,9.5,0.0
-2025-12-21 04:05PM EST,Pat Bryant,DEN,WR3,0.51,0.47,36.5,36.5,0.0
+2025-12-21 04:05PM EST,Pat Bryant,DEN,WR3,0.51,0.47,36.5,37.5,-1.0
 2025-12-21 04:05PM EST,Marvin Mims,DEN,WR4,0.355,0.31,16.5,13.5,3.0
-2025-12-21 04:25PM EST,Isaac TeSlaa,DET,WR3,0.315,0.62,9.5,8.5,1.0
+2025-12-21 04:25PM EST,Isaac TeSlaa,DET,WR3,0.315,0.62,10.5,10.5,0.0
 2025-12-21 04:25PM EST,Kalif Raymond,DET,WR4,0.47,0.17,7.5,7.5,0.0
-2025-12-20 08:20PM EST,Jayden Reed,GB,WR3,0.425,0.65,39.5,39.5,0.0
-2025-12-20 08:20PM EST,Matthew Golden,GB,WR4,0.59,0.35,15.5,15.5,0.0
+,Jayden Reed,,WR3,0.425,0.65,39.5,,
+,Matthew Golden,,WR4,0.59,0.35,16.5,,
 2025-12-21 04:25PM EST,Xavier Hutchinson,HOU,WR3,0.595,0.3,15.5,15.5,0.0
 2025-12-21 04:25PM EST,Christian Kirk,HOU,WR4,0.49,0.24,9.5,9.5,0.0
-2025-12-22 08:15PM EST,Josh Downs,IND,WR3,0.57,0.72,26.5,26.5,0.0
+2025-12-22 08:15PM EST,Josh Downs,IND,WR3,0.57,0.72,26.5,24.5,2.0
 ,Laquon Treadwell,,WR4,0.02,0.07,,,
 2025-12-21 04:05PM EST,Parker Washington,JAC,WR3,0.71,0.45,29.5,29.5,0.0
-2025-12-21 04:05PM EST,Tim Patrick,JAC,WR4,0.29,0.42,7.5,9.5,-2.0
-,Hollywood Brown,,WR3,0.44,0.34,35.5,,
+2025-12-21 04:05PM EST,Tim Patrick,JAC,WR4,0.29,0.42,7.5,7.5,0.0
+,Hollywood Brown,,WR3,0.44,0.34,36.5,,
 2025-12-21 01:00PM EST,JuJu Smith-Schuster,KC,WR4,0.495,0.52,19.5,19.5,0.0
 ,Konata Mumpfield,,WR3,0.38,0.46,12.0,,
 ,Tutu Atwell,,WR4,0.33,0.09,11.5,,
@@ -41,11 +41,11 @@ date,player,team,depth,median snap %,last snap %,consensus_line,prizepicks_line,
 ,Cedrick Wilson Jr.,,WR4,0.22,0.2,,,
 2025-12-21 01:00PM EST,Jalen Nailor,MIN,WR3,0.64,0.51,23.5,23.5,0.0
 ,Tai Felton,,WR4,0.0,0.02,,,
-2025-12-21 08:20PM EST,Mack Hollins,NE,WR3,0.655,0.79,35.5,35.5,0.0
+2025-12-21 08:20PM EST,Mack Hollins,NE,WR3,0.655,0.79,35.5,38.5,-3.0
 2025-12-21 08:20PM EST,DeMario Douglas,NE,WR4,0.245,0.19,15.0,16.5,-1.5
 ,Dante Pettis,,WR3,0.03,0.03,,,
 ,Kevin Austin Jr.,,WR4,,,,,
-2025-12-21 01:00PM EST,Isaiah Hodgins,NYG,WR3,0.8300000000000001,0.87,12.5,15.5,-3.0
+2025-12-21 01:00PM EST,Isaiah Hodgins,NYG,WR3,0.8300000000000001,0.87,15.5,15.5,0.0
 ,Gunner Olszewski,,WR4,0.01,0.02,,,
 2025-12-21 01:00PM EST,Isaiah Williams,NYJ,WR3,0.33,0.6,20.5,20.5,0.0
 ,Arian Smith,,WR4,0.46,0.13,,,
@@ -56,7 +56,7 @@ date,player,team,depth,median snap %,last snap %,consensus_line,prizepicks_line,
 ,Rashid Shaheed,,WR3,0.675,0.54,31.5,,
 ,Cody White,,WR4,0.23,0.09,,,
 2025-12-22 08:15PM EST,Kendrick Bourne,SF,WR3,0.68,0.45,22.5,22.5,0.0
-2025-12-22 08:15PM EST,Demarcus Robinson,SF,WR4,0.43,0.31,17.5,18.5,-1.0
+2025-12-22 08:15PM EST,Demarcus Robinson,SF,WR4,0.43,0.31,17.5,19.5,-2.0
 ,Chris Godwin Jr.,,WR3,,,,,
 2025-12-21 01:00PM EST,Jalen McMillan,TB,WR4,0.46,0.46,20.5,22.5,-2.0
 2025-12-21 01:00PM EST,Van Jefferson,TEN,WR3,0.735,0.58,18.5,18.5,0.0
