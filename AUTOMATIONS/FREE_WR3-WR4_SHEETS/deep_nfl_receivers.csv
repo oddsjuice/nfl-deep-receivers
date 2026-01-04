@@ -3,21 +3,21 @@ date,player,team,depth,median snap %,last snap %,consensus_line,prizepicks_line,
 ,Marvin Harrison Jr.,,WR4,0.78,0.33,,,
 ,David Sills,,WR3,0.47,0.15,,,
 ,Dylan Drummond,,WR4,0.195,0.0,,,
-2026-01-04 08:20PM EST,DeAndre Hopkins,BAL,WR3,0.325,0.25,25.5,17.5,8.0
+2026-01-04 08:20PM EST,DeAndre Hopkins,BAL,WR3,0.325,0.25,20.5,20.5,0.0
 ,Devontez Walker,,WR4,0.15,0.26,,,
 ,Josh Palmer,,WR3,0.5,0.5,,,
 ,Tyrell Shavers,,WR4,0.435,0.57,,,
 ,Xavier Legette,,WR3,0.715,0.55,14.5,,
 ,Jimmy Horn,,WR4,0.21,0.26,,,
-2026-01-04 04:25PM EST,Luther Burden,CHI,WR3,0.33999999999999997,0.58,58.5,59.5,-1.0
+2026-01-04 04:25PM EST,Luther Burden,CHI,WR3,0.33999999999999997,0.58,58.5,56.5,2.0
 2026-01-04 04:25PM EST,Olamide Zaccheaus,CHI,WR4,0.58,0.86,26.5,26.5,0.0
 2026-01-04 01:00PM EST,Andrei Iosivas,CIN,WR3,0.815,0.7,15.5,14.5,1.0
 ,Mitchell Tinsley,,WR4,0.16,0.29,,,
 ,Isaiah Bond,,WR3,0.48,0.23,,,
 ,Malachi Corley,,WR4,0.255,0.38,,,
-2026-01-04 01:00PM EST,Ryan Flournoy,DAL,WR3,0.43,0.4,29.5,30.5,-1.0
+2026-01-04 01:00PM EST,Ryan Flournoy,DAL,WR3,0.43,0.4,29.5,28.5,1.0
 ,Jalen Tolbert,,WR4,0.5549999999999999,0.62,,,
-2026-01-04 04:25PM EST,Pat Bryant,DEN,WR3,0.525,0.64,29.5,29.5,0.0
+2026-01-04 04:25PM EST,Pat Bryant,DEN,WR3,0.525,0.64,30.5,29.5,1.0
 ,Marvin Mims,,WR4,0.355,0.47,,,
 2026-01-04 04:25PM EST,Isaac TeSlaa,DET,WR3,0.34,0.52,26.5,26.5,0.0
 ,Kalif Raymond,,WR4,0.445,0.09,,,
@@ -27,9 +27,9 @@ date,player,team,depth,median snap %,last snap %,consensus_line,prizepicks_line,
 ,Xavier Hutchinson,,WR4,0.56,0.48,,,
 ,Josh Downs,,WR3,0.58,0.61,,,
 ,Ashton Dulin,,WR4,0.16,0.12,,,
-2026-01-04 01:00PM EST,Parker Washington,JAC,WR3,0.71,0.81,47.5,48.5,-1.0
+2026-01-04 01:00PM EST,Parker Washington,JAC,WR3,0.71,0.81,47.5,47.5,0.0
 ,Tim Patrick,,WR4,0.26,0.17,,,
-2026-01-04 04:25PM EST,JuJu Smith-Schuster,KC,WR3,0.5700000000000001,0.81,25.5,25.5,0.0
+2026-01-04 04:25PM EST,JuJu Smith-Schuster,KC,WR3,0.5700000000000001,0.81,22.5,22.5,0.0
 ,Jalen Royals,,WR4,0.095,0.12,,,
 ,Konata Mumpfield,,WR3,0.38,0.66,,,
 ,Xavier Smith,,WR4,0.16,0.51,,,
@@ -41,13 +41,13 @@ date,player,team,depth,median snap %,last snap %,consensus_line,prizepicks_line,
 ,Theo Wease Jr.,,WR4,,,,,
 2026-01-04 01:00PM EST,Jalen Nailor,MIN,WR3,0.625,0.43,16.5,16.5,0.0
 ,Tai Felton,,WR4,0.0,0.0,,,
-2026-01-04 04:25PM EST,Kyle Williams,NE,WR3,0.22,0.85,21.5,21.5,0.0
-,DeMario Douglas,,WR4,0.235,0.14,,,
-2026-01-04 01:00PM EST,Dante Pettis,NO,WR3,0.04,0.69,35.5,36.5,-1.0
+2026-01-04 04:25PM EST,Kyle Williams,NE,WR3,0.22,0.85,19.5,19.5,0.0
+2026-01-04 04:25PM EST,DeMario Douglas,NE,WR4,0.235,0.14,9.5,9.5,0.0
+2026-01-04 01:00PM EST,Dante Pettis,NO,WR3,0.04,0.69,36.5,36.5,0.0
 2026-01-04 01:00PM EST,Ronnie Bell,NO,WR4,0.04,0.04,16.5,16.5,0.0
-2026-01-04 01:00PM EST,Isaiah Hodgins,NYG,WR3,0.8,0.81,33.5,33.5,0.0
+2026-01-04 01:00PM EST,Isaiah Hodgins,NYG,WR3,0.8,0.81,32.5,32.5,0.0
 ,Gunner Olszewski,,WR4,0.01,0.16,,,
-,Isaiah Williams,,WR3,0.405,0.69,,,
+2026-01-04 04:25PM EST,Isaiah Williams,NYJ,WR3,0.405,0.69,23.5,23.5,0.0
 ,Tyler Johnson,,WR4,0.385,0.16,,,
 ,Jahan Dotson,,WR3,0.54,0.48,,,
 ,Darius Cooper,,WR4,0.20500000000000002,0.31,,,
@@ -55,8 +55,8 @@ date,player,team,depth,median snap %,last snap %,consensus_line,prizepicks_line,
 2026-01-04 08:20PM EST,Marquez Valdes-Scantling,PIT,WR4,0.42,0.82,27.5,27.5,0.0
 2026-01-03 08:00PM EST,Rashid Shaheed,SEA,WR3,0.67,0.18,29.5,29.5,0.0
 ,Jake Bobo,,WR4,0.155,0.26,,,
-2026-01-03 08:00PM EST,Demarcus Robinson,SF,WR3,0.43,0.35,10.5,7.5,3.0
-2026-01-03 08:00PM EST,Kendrick Bourne,SF,WR4,0.68,0.26,6.5,9.5,-3.0
+2026-01-03 08:00PM EST,Demarcus Robinson,SF,WR3,0.43,0.35,17.5,18.5,-1.0
+2026-01-03 08:00PM EST,Kendrick Bourne,SF,WR4,0.68,0.26,25.5,28.5,-3.0
 ,Emeka Egbuka,,WR3,0.865,0.58,25.5,,
 ,Jalen McMillan,,WR4,0.52,0.52,31.5,,
 ,James Proche II,,WR3,,,,,
