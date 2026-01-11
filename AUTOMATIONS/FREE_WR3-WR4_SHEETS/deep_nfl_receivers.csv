@@ -5,12 +5,12 @@ date,player,team,depth,median snap %,last snap %,consensus_line,prizepicks_line,
 ,Dylan Drummond,,WR4,0.16,0.16,,,
 ,DeAndre Hopkins,,WR3,0.32,0.25,,,
 ,Devontez Walker,,WR4,0.19,0.73,,,
-,Josh Palmer,,WR3,0.5,0.84,,,
-2026-01-11 01:00PM EST,Tyrell Shavers,BUF,WR4,0.4,0.05,15.5,16.5,-1.0
-,Xavier Legette,,WR3,0.7,0.31,9.5,,
-,Jimmy Horn,,WR4,0.21,0.31,8.0,,
-,Luther Burden,,WR3,0.39,0.62,41.5,,
-,Olamide Zaccheaus,,WR4,0.575,0.11,,,
+2026-01-11 01:00PM EST,Tyrell Shavers,BUF,WR3,0.4,0.05,15.5,17.5,-2.0
+2026-01-11 01:00PM EST,Gabe Davis,BUF,WR4,,,10.5,8.5,2.0
+,Xavier Legette,,WR3,0.685,0.4,9.5,,
+,Jimmy Horn,,WR4,0.215,0.28,8.0,,
+,Luther Burden,,WR3,0.41500000000000004,0.63,41.5,,
+,Olamide Zaccheaus,,WR4,0.57,0.27,,,
 ,Andrei Iosivas,,WR3,0.8,0.53,,,
 ,Mitchell Tinsley,,WR4,0.15,0.12,,,
 ,Isaiah Bond,,WR3,0.48,0.54,,,
@@ -21,20 +21,20 @@ date,player,team,depth,median snap %,last snap %,consensus_line,prizepicks_line,
 ,Marvin Mims,,WR4,0.35,0.32,,,
 ,Isaac TeSlaa,,WR3,0.34,0.6,,,
 ,Kalif Raymond,,WR4,0.44,0.19,,,
-,Jayden Reed,,WR3,0.47,0.16,35.5,,
-,Matthew Golden,,WR4,0.56,1.0,13.5,,
-2026-01-12 08:15PM EST,Christian Kirk,HOU,WR3,0.49,0.57,16.5,15.5,1.0
+,Jayden Reed,,WR3,0.49,0.68,35.5,,
+,Matthew Golden,,WR4,0.53,0.49,13.5,,
+2026-01-12 08:15PM EST,Christian Kirk,HOU,WR3,0.49,0.57,19.5,19.5,0.0
 2026-01-12 08:15PM EST,Xavier Hutchinson,HOU,WR4,0.57,0.79,14.5,14.5,0.0
 ,Josh Downs,,WR3,0.595,0.63,,,
 ,Ashton Dulin,,WR4,0.16999999999999998,0.37,,,
-2026-01-11 01:00PM EST,Parker Washington,JAC,WR3,0.725,0.74,51.5,51.5,0.0
+2026-01-11 01:00PM EST,Parker Washington,JAC,WR3,0.725,0.74,51.5,52.5,-1.0
 ,Tim Patrick,,WR4,0.275,0.36,,,
 ,JuJu Smith-Schuster,,WR3,0.62,0.78,,,
 ,Jalen Royals,,WR4,0.12,0.67,,,
-,Konata Mumpfield,,WR3,0.38,0.48,3.5,,
-,Xavier Smith,,WR4,0.2,0.33,4.5,,
+,Konata Mumpfield,,WR3,0.38,0.14,3.5,,
+,Xavier Smith,,WR4,0.24,0.43,4.5,,
 2026-01-11 08:15PM EST,Keenan Allen,LAC,WR3,0.57,0.54,34.5,35.5,-1.0
-,Tre Harris,,WR4,0.46,0.97,15.5,,
+,Tre Harris,,WR4,0.46,0.97,17.5,,
 ,Dont'e Thornton Jr.,,WR3,,,,,
 ,Tyler Lockett,,WR4,0.52,0.52,,,
 ,Cedrick Wilson Jr.,,WR3,0.29000000000000004,0.64,,,
@@ -42,17 +42,17 @@ date,player,team,depth,median snap %,last snap %,consensus_line,prizepicks_line,
 ,Jalen Nailor,,WR3,0.63,0.75,,,
 ,Tai Felton,,WR4,0.0,0.13,,,
 2026-01-11 08:15PM EST,Kyle Williams,NE,WR3,0.22,0.46,15.0,15.5,-0.5
-2026-01-11 08:15PM EST,DeMario Douglas,NE,WR4,0.24,0.25,18.5,18.5,0.0
+2026-01-11 08:15PM EST,DeMario Douglas,NE,WR4,0.24,0.25,19.5,17.5,2.0
 ,Dante Pettis,,WR3,0.06,0.76,,,
 ,Ronnie Bell,,WR4,0.28500000000000003,0.53,,,
 ,Gunner Olszewski,,WR3,0.015,0.84,,,
 ,Dalen Cambre,,WR4,0.03,0.09,,,
 ,Isaiah Williams,,WR3,0.42,0.52,,,
 ,Tyler Johnson,,WR4,0.385,0.16,,,
-2026-01-11 04:30PM EST,Jahan Dotson,PHI,WR3,0.54,0.94,6.5,6.5,0.0
+2026-01-11 04:30PM EST,Jahan Dotson,PHI,WR3,0.54,0.94,7.5,7.5,0.0
 ,Darius Cooper,,WR4,0.21,0.84,,,
-2026-01-12 08:15PM EST,Adam Thielen,PIT,WR3,0.33499999999999996,0.67,12.5,11.5,1.0
-2026-01-12 08:15PM EST,Marquez Valdes-Scantling,PIT,WR4,0.47,0.84,10.5,10.5,0.0
+2026-01-12 08:15PM EST,Adam Thielen,PIT,WR3,0.33499999999999996,0.67,13.5,11.5,2.0
+2026-01-12 08:15PM EST,Marquez Valdes-Scantling,PIT,WR4,0.47,0.84,10.5,9.5,1.0
 ,Rashid Shaheed,,WR3,0.64,0.48,,,
 ,Jake Bobo,,WR4,0.15,0.13,,,
 ,Demarcus Robinson,,WR3,0.435,0.88,,,
