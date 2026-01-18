@@ -23,7 +23,7 @@ date,player,team,depth,median snap %,last snap %,consensus_line,prizepicks_line,
 ,Kalif Raymond,,WR4,0.44,0.19,,,
 ,Jayden Reed,,WR3,0.49,0.68,,,
 ,Matthew Golden,,WR4,0.53,0.49,,,
-2026-01-18 03:00PM EST,Christian Kirk,HOU,WR3,0.5,0.56,42.5,38.5,4.0
+2026-01-18 03:00PM EST,Christian Kirk,HOU,WR3,0.5,0.56,40.0,39.5,0.5
 2026-01-18 03:00PM EST,Xavier Hutchinson,HOU,WR4,0.595,0.66,29.5,29.5,0.0
 ,Josh Downs,,WR3,0.595,0.63,,,
 ,Ashton Dulin,,WR4,0.16999999999999998,0.37,,,
@@ -41,7 +41,7 @@ date,player,team,depth,median snap %,last snap %,consensus_line,prizepicks_line,
 ,Theo Wease Jr.,,WR4,,,,,
 ,Jalen Nailor,,WR3,0.63,0.75,,,
 ,Tai Felton,,WR4,0.0,0.13,,,
-2026-01-18 03:00PM EST,Kyle Williams,NE,WR3,0.22,0.33,4.5,5.5,-1.0
+2026-01-18 03:00PM EST,Kyle Williams,NE,WR3,0.22,0.33,5.5,5.5,0.0
 2026-01-18 03:00PM EST,DeMario Douglas,NE,WR4,0.245,0.33,18.5,18.5,0.0
 ,Dante Pettis,,WR3,0.06,0.76,,,
 ,Ronnie Bell,,WR4,0.28500000000000003,0.53,,,
@@ -53,10 +53,10 @@ date,player,team,depth,median snap %,last snap %,consensus_line,prizepicks_line,
 ,Darius Cooper,,WR4,0.22499999999999998,0.29,,,
 ,Marquez Valdes-Scantling,,WR3,0.52,0.58,,,
 ,Scott Miller,,WR4,0.14500000000000002,0.12,,,
-2026-01-17 08:12PM EST,Rashid Shaheed,SEA,WR3,0.64,0.48,23.5,23.5,0.0
+,Rashid Shaheed,,WR3,0.64,0.48,23.5,,
 ,Jake Bobo,,WR4,0.15,0.13,,,
-2026-01-17 08:12PM EST,Demarcus Robinson,SF,WR3,0.44,0.68,24.5,20.5,4.0
-2026-01-17 08:12PM EST,Kendrick Bourne,SF,WR4,0.67,0.37,2.5,2.5,0.0
+,Demarcus Robinson,,WR3,0.44,0.68,24.5,,
+,Kendrick Bourne,,WR4,0.67,0.37,2.5,,
 ,Emeka Egbuka,,WR3,0.85,0.58,,,
 ,Jalen McMillan,,WR4,0.525,0.55,,,
 ,James Proche II,,WR3,,,,,
